@@ -22,7 +22,7 @@
         /* Header Styling */
         header {
             background-color: var(--dark-green); /* Dark green background */
-            color: orange; /* Text color */
+            color: black; /* Black text color */
             text-align: center;
             padding: 20px;
             font-size: 6rem; /* Large size for the header */
@@ -42,7 +42,7 @@
             flex: 1;
             position: relative;
             overflow: hidden;
-            border: 5px solid orange; /* Border Around Video */
+            border: 5px solid white; /* White border around Video */
         }
 
         .video-background iframe {
@@ -71,12 +71,24 @@
             width: 100%;
         }
         
-        h2, a {
-            font-family: 'Creepster', cursive; /* Spooky font for other elements */
-            color: white; /* Keep text white for visibility */
+        h2 {
+            font-family: 'Creepster', cursive; /* Spooky font for the header */
+        }
+
+        .normal-text {
+            font-family: Arial, sans-serif; /* Normal font */
+            font-size: 1.5rem; /* Adjust font size as needed */
+            margin: 10px 0; /* Add some vertical spacing */
+        }
+
+        .separator {
+            border-top: 2px solid white; /* White line separator */
+            margin: 20px 0; /* Add spacing around the line */
         }
 
         a {
+            font-family: Arial, sans-serif; /* Normal font for the link */
+            color: white; /* Keep text white for visibility */
             text-decoration: underline; /* Keep the link underlined */
         }
     </style>
@@ -95,7 +107,9 @@
 
         <!-- Content Area -->
         <div class="content">
-            <h2>Ladies and Gentlemen, Welcome to Locktober! LOCK IN!!!</h2>
+            <div class="normal-text">Ladies and Gentlemen, Welcome to Locktober!</div>
+            <div class="separator"></div> <!-- Line separator -->
+            <div class="normal-text">LOCK IN!!!</div>
             <a href="https://your-spreadsheet-link.com">ENTER LOCKTOBER HERE</a>
         </div>
     </div>
