@@ -22,6 +22,7 @@
             padding: 20px;
             text-align: center;
             font-family: 'Special Elite', cursive; /* Spooky Font for Header */
+            font-size: 36px; /* Larger Font Size */
         }
         main {
             display: flex;
@@ -38,20 +39,32 @@
             width: 50%;
             padding-left: 10px;
             display: flex;
+            flex-direction: column; /* Stack the text and link */
             align-items: center;
             justify-content: center;
+            color: white; /* Text Color for Better Contrast */
         }
         .text-container p {
             font-size: 20px;
             line-height: 1.5;
-            color: white; /* Text Color for Better Contrast */
+            text-align: center; /* Center Align Text */
+            font-family: 'Special Elite', cursive; /* Spooky Font for Text */
+        }
+        .text-container a {
+            color: #ffcc00; /* Color for the hyperlink */
+            font-size: 24px; /* Larger Font Size for Link */
+            text-decoration: none;
+            margin-top: 10px; /* Space between text and link */
+        }
+        .text-container a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
         footer {
             background-color: #064f09; /* Dark Green */
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 24px;
+            font-size: 36px; /* Larger Font Size */
             letter-spacing: 2px;
             width: 100%;
             font-family: 'Special Elite', cursive; /* Spooky Font for Footer */
@@ -77,7 +90,8 @@
 
         <!-- Right: Text -->
         <div class="text-container">
-            <p>This is where you can add any information or message you want. Use this space to share your thoughts on LOCKTOBER, motivation, or any relevant content for your visitors.</p>
+            <p>Ladies and Gentlemen, Welcome to Locktober! LOCK IN!!!</p>
+            <a href="YOUR_SPREADSHEET_LINK_HERE" target="_blank">ENTER LOCKTOBER HERE</a>
         </div>
     </main>
 
