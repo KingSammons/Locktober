@@ -3,73 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Link</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Video Background Styling */
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .video-background iframe {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Link Styling */
-        .content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            text-align: center;
-        }
-
-        .content a {
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        .content a:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-    </style>
+    <title>Test YouTube Embed</title>
 </head>
 <body>
-
-    <!-- Video Background -->
-    <div class="video-background">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AljGdEZ3nzc?si=LmIiY5JDk_HQklQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-    <!-- Clickable Link -->
-    <div class="content">
-        <a href="https://example.com">Click Here to Learn More</a>
-    </div>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AljGdEZ3nzc?si=LmIiY5JDk_HQklQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </body>
 </html>
