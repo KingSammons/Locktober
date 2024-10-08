@@ -1,9 +1,14 @@
+Here’s the updated HTML code with the spooky "Locktober" header replacing the Jack-O-Lantern images. The header is styled to be large and spooky, as you requested:
+
+### Updated HTML Code
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locktober Celebration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <style>
         body, html {
             height: 100%;
@@ -27,6 +32,7 @@
             display: flex;
             flex: 1;
             background-color: #1a1a1a; /* Very Dark Gray */
+            position: relative; /* For absolute positioning of spooky header */
         }
 
         .video-background {
@@ -50,6 +56,7 @@
             color: white;
             text-align: center;
             padding: 20px;
+            position: relative; /* For positioning the spooky header */
         }
 
         .footer {
@@ -61,21 +68,15 @@
             width: 100%;
         }
 
-        .jack-o-lantern {
-            position: absolute;
-            width: 100px; /* Adjust size as needed */
-            height: auto;
-            opacity: 0.8; /* Slight transparency */
-        }
-
-        .left {
-            left: 10px;
-            top: 20%;
-        }
-
-        .right {
-            right: 10px;
-            top: 20%;
+        .spooky-header {
+            font-family: 'Creepster', cursive; /* Spooky font */
+            font-size: 10rem; /* Large size */
+            letter-spacing: 1rem; /* Space out the letters */
+            color: orange; /* Spooky color */
+            margin: 0; /* Remove default margin */
+            position: absolute; /* Position it in the main area */
+            top: 20%; /* Adjust as needed */
+            width: 100%; /* Full width */
         }
     </style>
 </head>
@@ -91,15 +92,14 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/AljGdEZ3nzc?autoplay=1&mute=1" title="YouTube video player" allowfullscreen></iframe>
         </div>
 
+        <!-- Spooky Locktober Header -->
+        <h1 class="spooky-header">Locktober</h1>
+
         <!-- Content Area -->
         <div class="content">
-            <h2 style="font-family: 'Creepster', cursive;">Ladies and Gentlemen, Welcome to Locktober! LOCK IN!!!</h2>
+            <h2 style="color: white;">Ladies and Gentlemen, Welcome to Locktober! LOCK IN!!!</h2>
             <a href="https://your-spreadsheet-link.com" style="color: white; text-decoration: underline;">ENTER LOCKTOBER HERE</a>
         </div>
-
-        <!-- Jack-O-Lantern Images -->
-        <img src="https://github.com/KingSammons/Locktober/raw/main/973d76e0347fae0c853644c3016e43e7.png" class="jack-o-lantern left" alt="Glowing Jack-O-Lantern">
-        <img src="https://github.com/KingSammons/Locktober/raw/main/973d76e0347fae0c853644c3016e43e7.png" class="jack-o-lantern right" alt="Glowing Jack-O-Lantern">
     </div>
 
     <footer class="footer">
@@ -108,3 +108,11 @@
 
 </body>
 </html>
+```
+
+### Changes Made
+1. **Spooky Header:** Added an `<h1>` element with the class `spooky-header` to display "Locktober" in a large, spooky font and color, positioned absolutely in the main section.
+2. **Removed Jack-O-Lantern Images:** The Jack-O-Lantern images were removed, as requested.
+3. **Styling Adjustments:** Adjusted the styles to ensure the spooky header fits well within the layout.
+
+You can adjust the position and size of the spooky header as needed. If you need further modifications, just let me know!
