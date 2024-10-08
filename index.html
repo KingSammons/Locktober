@@ -22,20 +22,38 @@
             text-align: center;
         }
         main {
+            display: flex;
+            justify-content: space-between;
             padding: 20px;
-            text-align: center;
             flex-grow: 1;
+        }
+        .video-container {
+            width: 50%;
+            padding-right: 10px;
+        }
+        .text-container {
+            width: 50%;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .text-container p {
+            font-size: 20px;
+            line-height: 1.5;
         }
         footer {
             background-color: #064f09; /* Dark Green */
             color: white;
             text-align: center;
-            padding: 10px 20px;
+            padding: 20px;
+            font-size: 24px;
+            letter-spacing: 2px;
+            width: 100%;
         }
         iframe {
             width: 100%;
-            height: 400px;
-            max-width: 100%;
+            height: 100%;
             border: none;
         }
     </style>
@@ -47,8 +65,15 @@
     </header>
 
     <main>
-        <h2>Check out this Video to Get Locked In!</h2>
-        <iframe src="https://www.youtube.com/embed/AljGdEZ3nzc?si=LmIiY5JDk_HQklQg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Left: Video -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/AljGdEZ3nzc?autoplay=1&si=LmIiY5JDk_HQklQg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <!-- Right: Text -->
+        <div class="text-container">
+            <p>This is where you can add any information or message you want. Use this space to share your thoughts on LOCKTOBER, motivation, or any relevant content for your visitors.</p>
+        </div>
     </main>
 
     <footer>
