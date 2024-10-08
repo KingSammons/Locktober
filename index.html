@@ -14,12 +14,23 @@
             font-family: 'Creepster', cursive; /* Spooky Font */
         }
 
+        /* Header Styling */
+        header {
+            background-color: darkgreen; /* Dark green background */
+            color: orange; /* Text color */
+            text-align: center;
+            padding: 20px;
+            font-size: 6rem; /* Large size for the header */
+            letter-spacing: 1rem; /* Space out the letters */
+            margin: 0; /* Remove default margin */
+        }
+
         /* Main Content Styling */
         .main {
             display: flex;
             flex: 1;
             background-color: #1a1a1a; /* Very Dark Gray */
-            position: relative; /* For absolute positioning of spooky header */
+            position: relative; /* For absolute positioning of other elements */
         }
 
         .video-background {
@@ -43,7 +54,7 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative; /* For positioning the spooky header */
+            position: relative; /* For positioning the content area */
         }
 
         .footer {
@@ -53,17 +64,6 @@
             padding: 20px;
             font-size: 24px; /* Footer Font Size */
             width: 100%;
-        }
-
-        .spooky-header {
-            font-family: 'Creepster', cursive; /* Spooky font */
-            font-size: 6rem; /* Smaller size */
-            letter-spacing: 1rem; /* Space out the letters */
-            color: orange; /* Spooky color */
-            margin: 0; /* Remove default margin */
-            position: absolute; /* Position it in the main area */
-            top: 20%; /* Adjust as needed */
-            width: 100%; /* Full width */
         }
         
         h2, a {
@@ -78,14 +78,15 @@
 </head>
 <body>
 
+    <header>
+        LOCKTOBER
+    </header>
+
     <div class="main">
         <!-- Video Background -->
         <div class="video-background">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/AljGdEZ3nzc?autoplay=1&mute=1" title="YouTube video player" allowfullscreen></iframe>
         </div>
-
-        <!-- Spooky Locktober Header -->
-        <h1 class="spooky-header">Locktober</h1>
 
         <!-- Content Area -->
         <div class="content">
