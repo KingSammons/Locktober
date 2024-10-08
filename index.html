@@ -3,100 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOCKTOBER Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"> <!-- Spooky Font -->
+    <title>Locktober Celebration</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            font-family: 'Creepster', cursive; /* Spooky Font */
         }
+
         header {
-            background-color: #064f09; /* Dark Green */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-family: 'Special Elite', cursive; /* Spooky Font for Header */
-            font-size: 36px; /* Larger Font Size */
-        }
-        main {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            flex-grow: 1;
-            background-color: #1c1c1c; /* Very Dark Gray */
-        }
-        .video-container {
-            width: 50%;
-            padding-right: 10px;
-        }
-        .text-container {
-            width: 50%;
-            padding-left: 10px;
-            display: flex;
-            flex-direction: column; /* Stack the text and link */
-            align-items: center;
-            justify-content: center;
-            color: white; /* Text Color for Better Contrast */
-        }
-        .text-container p {
-            font-size: 20px;
-            line-height: 1.5;
-            text-align: center; /* Center Align Text */
-            font-family: 'Special Elite', cursive; /* Spooky Font for Text */
-        }
-        .text-container a {
-            color: #ffcc00; /* Color for the hyperlink */
-            font-size: 24px; /* Larger Font Size for Link */
-            text-decoration: none;
-            margin-top: 10px; /* Space between text and link */
-        }
-        .text-container a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-        footer {
-            background-color: #064f09; /* Dark Green */
+            background-color: darkgreen;
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 36px; /* Larger Font Size */
-            letter-spacing: 2px;
+            font-size: 36px; /* Header Font Size */
             width: 100%;
-            font-family: 'Special Elite', cursive; /* Spooky Font for Footer */
         }
-        iframe {
+
+        /* Main Content Styling */
+        .main {
+            display: flex;
+            flex: 1;
+            background-color: #1a1a1a; /* Very Dark Gray */
+        }
+
+        .video-background {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid orange; /* Border Around Video */
+        }
+
+        .video-background iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none; /* Remove default border */
+        }
+
+        .content {
+            flex: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px; /* Footer Font Size */
+            width: 100%;
+        }
+
+        .jack-o-lantern {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            opacity: 0.8; /* Slight transparency */
+        }
+
+        .left {
+            left: 10px;
+            top: 20%;
+        }
+
+        .right {
+            right: 10px;
+            top: 20%;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to LOCKTOBER</h1>
+        Locktober Celebration
     </header>
 
-    <main>
-        <!-- Left: Video -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/AljGdEZ3nzc?autoplay=1&mute=1&si=LmIiY5JDk_HQklQg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="main">
+        <!-- Video Background -->
+        <div class="video-background">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AljGdEZ3nzc?autoplay=1&mute=1" title="YouTube video player" allowfullscreen></iframe>
         </div>
 
-        <!-- Right: Text -->
-        <div class="text-container">
-            <p>Ladies and Gentlemen, Welcome to Locktober! LOCK IN!!!</p>
-            <a href="YOUR_SPREADSHEET_LINK_HERE" target="_blank">ENTER LOCKTOBER HERE</a>
+        <!-- Content Area -->
+        <div class="content">
+            <h2 style="font-family: 'Creepster', cursive;">Ladies and Gentlemen, Welcome to Locktober! LOCK IN!!!</h2>
+            <a href="https://your-spreadsheet-link.com" style="color: white; text-decoration: underline;">ENTER LOCKTOBER HERE</a>
         </div>
-    </main>
 
-    <footer>
-        <p>IT'S LOCKTOBER, LOCK IN!!!!</p>
+        <!-- Jack-O-Lantern Images -->
+        <img src="https://github.com/KingSammons/Locktober/raw/main/973d76e0347fae0c853644c3016e43e7.png" class="jack-o-lantern left" alt="Glowing Jack-O-Lantern">
+        <img src="https://github.com/KingSammons/Locktober/raw/main/973d76e0347fae0c853644c3016e43e7.png" class="jack-o-lantern right" alt="Glowing Jack-O-Lantern">
+    </div>
+
+    <footer class="footer">
+        IT'S LOCKTOBER, LOCK IN!!!!
     </footer>
 
 </body>
