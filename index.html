@@ -18,6 +18,7 @@
 
         :root {
             --dark-green: #005700;
+            --orange: #FF5733; /* Bright Orange */
         }
 
         header {
@@ -31,16 +32,13 @@
         }
 
         header span {
-            animation: flicker 0.5s infinite; /* Flicker faster (0.5s) */
+            animation: flicker 2s infinite; /* Reset to 2 seconds for a slower flicker */
         }
 
-        /* Faster Flicker */
+        /* Flicker between black and orange */
         @keyframes flicker {
-            0% { opacity: 1; }
-            25% { opacity: 0.6; }
-            50% { opacity: 0.2; }
-            75% { opacity: 0.8; }
-            100% { opacity: 1; }
+            0%, 100% { color: black; }   /* Start and end with black */
+            50% { color: var(--orange); } /* In the middle, switch to orange */
         }
 
         .main {
@@ -114,7 +112,7 @@
             height: auto;
             transition: transform 0.5s ease-in-out;
             animation: drive 10s linear infinite;
-            cursor: pointer; /* Makes it clickable */
+            cursor: pointer;
         }
 
         @keyframes drive {
@@ -122,13 +120,11 @@
             100% { left: 100vw; }
         }
 
-        /* Change color on hover */
         .rocket-league:hover {
-            filter: hue-rotate(180deg); /* Change color */
-            animation-duration: 5s; /* Speed up the car on hover */
+            filter: hue-rotate(180deg);
+            animation-duration: 5s;
         }
 
-        /* Keyboard or click interaction: reverse the direction */
         .reverse {
             animation: drive-reverse 10s linear infinite;
         }
@@ -169,20 +165,18 @@
         const car = document.querySelector('.rocket-league');
         let isReversed = false;
 
-        // Add mouse click event to stop/restart the car
         car.addEventListener('click', function () {
             if (car.style.animationPlayState === 'paused') {
-                car.style.animationPlayState = 'running'; // Restart if paused
+                car.style.animationPlayState = 'running';
             } else {
-                car.style.animationPlayState = 'paused'; // Pause the car
+                car.style.animationPlayState = 'paused';
             }
         });
 
-        // Add keyboard event to reverse direction with 'R' key
         document.addEventListener('keydown', function (event) {
             if (event.key === 'r' || event.key === 'R') {
-                isReversed = !isReversed; // Toggle reverse state
-                car.classList.toggle('reverse', isReversed); // Apply reverse animation
+                isReversed = !isReversed;
+                car.classList.toggle('reverse', isReversed);
             }
         });
     </script>
