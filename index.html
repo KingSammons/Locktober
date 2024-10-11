@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locktober Celebration</title>
+    <title>Locktober</title>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -28,6 +28,13 @@
             font-size: 6rem; /* Large size for the header */
             letter-spacing: 1rem; /* Space out the letters */
             margin: 0; /* Remove default margin */
+            animation: flicker 2s infinite; /* Add flicker animation */
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         /* Main Content Styling */
@@ -107,16 +114,4 @@
 
         <!-- Content Area -->
         <div class="content">
-            <div class="normal-text">Ladies and Gentlemen, Welcome to Locktober!</div>
-            <div class="separator"></div> <!-- Line separator -->
-            <div class="normal-text">LOCK IN!!!</div>
-            <a href="https://your-spreadsheet-link.com">ENTER LOCKTOBER HERE</a>
-        </div>
-    </div>
-
-    <footer class="footer">
-        IT'S LOCKTOBER, LOCK IN!!!!
-    </footer>
-
-</body>
-</html>
+            <div class="normal-text">Ladies and Gentlemen, Welcome to Locktober!</
