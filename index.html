@@ -12,6 +12,7 @@
             display: flex;
             flex-direction: column;
             font-family: 'Creepster', cursive; /* Spooky Font */
+            min-height: 100%; /* Ensure content area takes at least full height */
         }
 
         /* Darker green color */
@@ -28,7 +29,10 @@
             font-size: 6rem; /* Large size for the header */
             letter-spacing: 1rem; /* Space out the letters */
             margin: 0; /* Remove default margin */
-            animation: flicker 2s infinite; /* Add flicker animation */
+        }
+
+        header span {
+            animation: flicker 2s infinite; /* Add flicker animation to the text */
         }
 
         @keyframes flicker {
@@ -69,6 +73,7 @@
             position: relative; /* For positioning the content area */
         }
 
+        /* Footer Styling */
         .footer {
             background-color: var(--dark-green); /* Dark green background */
             color: white;
@@ -76,6 +81,7 @@
             padding: 20px;
             font-size: 24px; /* Footer Font Size */
             width: 100%;
+            flex-shrink: 0; /* Ensure the footer doesn’t shrink or disappear */
         }
         
         h2 {
@@ -103,7 +109,7 @@
 <body>
 
     <header>
-        LOCKTOBER
+        <span>LOCKTOBER</span> <!-- Apply flicker effect to just this text -->
     </header>
 
     <div class="main">
@@ -114,4 +120,16 @@
 
         <!-- Content Area -->
         <div class="content">
-            <div class="normal-text">Ladies and Gentlemen, Welcome to Locktober!</
+            <div class="normal-text">Ladies and Gentlemen, Welcome to Locktober!</div>
+            <div class="separator"></div> <!-- Line separator -->
+            <div class="normal-text">LOCK IN!!!</div>
+            <a href="https://your-spreadsheet-link.com">ENTER LOCKTOBER HERE</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        IT'S LOCKTOBER, LOCK IN!!!!
+    </footer>
+
+</body>
+</html>
