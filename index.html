@@ -11,49 +11,50 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            font-family: 'Creepster', cursive; /* Spooky Font */
-            min-height: 100%; /* Ensure content area takes at least full height */
+            font-family: 'Creepster', cursive;
+            min-height: 100%;
+            overflow-x: hidden;
         }
 
-        /* Darker green color */
         :root {
-            --dark-green: #005700; /* Darker green */
+            --dark-green: #005700;
         }
 
-        /* Header Styling */
         header {
-            background-color: var(--dark-green); /* Dark green background */
-            color: black; /* Black text color */
+            background-color: var(--dark-green);
+            color: black;
             text-align: center;
             padding: 20px;
-            font-size: 6rem; /* Large size for the header */
-            letter-spacing: 1rem; /* Space out the letters */
-            margin: 0; /* Remove default margin */
+            font-size: 6rem;
+            letter-spacing: 1rem;
+            margin: 0;
         }
 
         header span {
-            animation: flicker 2s infinite; /* Add flicker animation to the text */
+            animation: flicker 0.5s infinite; /* Flicker faster (0.5s) */
         }
 
+        /* Faster Flicker */
         @keyframes flicker {
             0% { opacity: 1; }
-            50% { opacity: 0.5; }
+            25% { opacity: 0.6; }
+            50% { opacity: 0.2; }
+            75% { opacity: 0.8; }
             100% { opacity: 1; }
         }
 
-        /* Main Content Styling */
         .main {
             display: flex;
             flex: 1;
-            background-color: #1a1a1a; /* Very Dark Gray */
-            position: relative; /* For absolute positioning of other elements */
+            background-color: #1a1a1a;
+            position: relative;
         }
 
         .video-background {
             flex: 1;
             position: relative;
             overflow: hidden;
-            border: 5px solid white; /* White border around Video */
+            border: 5px solid white;
         }
 
         .video-background iframe {
@@ -62,7 +63,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            border: none; /* Remove default border */
+            border: none;
         }
 
         .content {
@@ -70,58 +71,88 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative; /* For positioning the content area */
+            position: relative;
         }
 
-        /* Footer Styling */
         .footer {
-            background-color: var(--dark-green); /* Dark green background */
+            background-color: var(--dark-green);
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 24px; /* Footer Font Size */
+            font-size: 24px;
             width: 100%;
-            flex-shrink: 0; /* Ensure the footer doesn’t shrink or disappear */
+            flex-shrink: 0;
         }
         
         h2 {
-            font-family: 'Creepster', cursive; /* Spooky font for the header */
+            font-family: 'Creepster', cursive;
         }
 
         .normal-text {
-            font-family: Arial, sans-serif; /* Normal font */
-            font-size: 1.5rem; /* Adjust font size as needed */
-            margin: 10px 0; /* Add some vertical spacing */
+            font-family: Arial, sans-serif;
+            font-size: 1.5rem;
+            margin: 10px 0;
         }
 
         .separator {
-            border-top: 2px solid white; /* White line separator */
-            margin: 20px 0; /* Add spacing around the line */
+            border-top: 2px solid white;
+            margin: 20px 0;
         }
 
         a {
-            font-family: Arial, sans-serif; /* Normal font for the link */
-            color: white; /* Keep text white for visibility */
-            text-decoration: underline; /* Keep the link underlined */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Rocket League Cars */
+        .rocket-league {
+            position: fixed;
+            bottom: 0;
+            left: -200px;
+            width: 150px;
+            height: auto;
+            transition: transform 0.5s ease-in-out;
+            animation: drive 10s linear infinite;
+            cursor: pointer; /* Makes it clickable */
+        }
+
+        @keyframes drive {
+            0% { left: -200px; }
+            100% { left: 100vw; }
+        }
+
+        /* Change color on hover */
+        .rocket-league:hover {
+            filter: hue-rotate(180deg); /* Change color */
+            animation-duration: 5s; /* Speed up the car on hover */
+        }
+
+        /* Keyboard or click interaction: reverse the direction */
+        .reverse {
+            animation: drive-reverse 10s linear infinite;
+        }
+
+        @keyframes drive-reverse {
+            0% { left: 100vw; }
+            100% { left: -200px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <span>LOCKTOBER</span> <!-- Apply flicker effect to just this text -->
+        <span>LOCKTOBER</span>
     </header>
 
     <div class="main">
-        <!-- Video Background -->
         <div class="video-background">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/AljGdEZ3nzc?autoplay=1&mute=1" title="YouTube video player" allowfullscreen></iframe>
         </div>
 
-        <!-- Content Area -->
         <div class="content">
             <div class="normal-text">Ladies and Gentlemen, Welcome to Locktober!</div>
-            <div class="separator"></div> <!-- Line separator -->
+            <div class="separator"></div>
             <div class="normal-text">LOCK IN!!!</div>
             <a href="https://your-spreadsheet-link.com">ENTER LOCKTOBER HERE</a>
         </div>
@@ -130,6 +161,31 @@
     <footer class="footer">
         IT'S LOCKTOBER, LOCK IN!!!!
     </footer>
+
+    <!-- Rocket League Car Image -->
+    <img class="rocket-league" src="https://via.placeholder.com/150x75/FF5733/FFFFFF?text=Rocket+Car" alt="Rocket League Car">
+
+    <script>
+        const car = document.querySelector('.rocket-league');
+        let isReversed = false;
+
+        // Add mouse click event to stop/restart the car
+        car.addEventListener('click', function () {
+            if (car.style.animationPlayState === 'paused') {
+                car.style.animationPlayState = 'running'; // Restart if paused
+            } else {
+                car.style.animationPlayState = 'paused'; // Pause the car
+            }
+        });
+
+        // Add keyboard event to reverse direction with 'R' key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'r' || event.key === 'R') {
+                isReversed = !isReversed; // Toggle reverse state
+                car.classList.toggle('reverse', isReversed); // Apply reverse animation
+            }
+        });
+    </script>
 
 </body>
 </html>
