@@ -32,11 +32,11 @@
         }
 
         header span {
-            animation: flicker 2s infinite; /* Reset to 2 seconds for a slower flicker */
+            animation: slow-flicker 8s infinite; /* Slower flicker - 8 seconds */
         }
 
-        /* Flicker between black and orange */
-        @keyframes flicker {
+        /* Slow transition between black and orange */
+        @keyframes slow-flicker {
             0%, 100% { color: black; }   /* Start and end with black */
             50% { color: var(--orange); } /* In the middle, switch to orange */
         }
