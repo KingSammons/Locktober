@@ -178,6 +178,15 @@
                 isReversed = !isReversed;
                 car.classList.toggle('reverse', isReversed);
             }
+            if (event.key === 'ArrowLeft') {
+                // Move car left
+                const leftPosition = parseFloat(getComputedStyle(car).left);
+                car.style.left = (leftPosition - 10) + 'px'; // Move left by 10px
+            } else if (event.key === 'ArrowRight') {
+                // Move car right
+                const leftPosition = parseFloat(getComputedStyle(car).left);
+                car.style.left = (leftPosition + 10) + 'px'; // Move right by 10px
+            }
         });
     </script>
 
