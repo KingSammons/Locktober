@@ -14,6 +14,7 @@
             font-family: 'Creepster', cursive;
             min-height: 100%;
             overflow-x: hidden;
+            position: relative; /* Add this to allow absolute positioning of leaves */
         }
 
         :root {
@@ -133,6 +134,28 @@
             0% { left: 100vw; }
             100% { left: -200px; }
         }
+
+        /* Leaf Animation */
+        .leaf {
+            position: absolute;
+            bottom: 0;
+            width: 50px; /* Adjust as needed */
+            height: auto;
+            opacity: 0.8;
+            animation: blow 8s linear infinite;
+        }
+
+        @keyframes blow {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100vh) rotate(30deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,6 +184,11 @@
     <!-- Rocket League Car Image -->
     <img class="rocket-league" src="https://media.graphassets.com/resize=fit:clip,height:360,width:640/output=format:webp/9cshkrr5Q9ycp1tTq79Q" alt="Rocket League Car">
 
+    <!-- Leaf Images -->
+    <img class="leaf" src="https://file.aiquickdraw.com/imgcompressed/img/compressed_a57ec49e7646c8265b677a98c0d33c38.webp" alt="Leaf">
+    <img class="leaf" src="https://file.aiquickdraw.com/imgcompressed/img/compressed_a57ec49e7646c8265b677a98c0d33c38.webp" alt="Leaf">
+    <img class="leaf" src="https://file.aiquickdraw.com/imgcompressed/img/compressed_a57ec49e7646c8265b677a98c0d33c38.webp" alt="Leaf">
+
     <script>
         const car = document.querySelector('.rocket-league');
         let isReversed = false;
@@ -188,7 +216,24 @@
                 car.style.left = (leftPosition + 10) + 'px'; // Move right by 10px
             }
         });
+
+        // Function to create multiple leaves
+        function createLeaf() {
+            const leaf = document.createElement('img');
+            leaf.src = 'https://file.aiquickdraw.com/imgcompressed/img/compressed_a57ec49e7646c8265b677a98c0d33c38.webp'; // Leaf image URL
+            leaf.className = 'leaf';
+            leaf.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            leaf.style.animationDuration = (Math.random() * 5 + 3) + 's'; // Random duration between 3s and 8s
+            document.body.appendChild(leaf);
+            setTimeout(() => {
+                leaf.remove(); // Remove the leaf after the animation is done
+            }, 8000); // Matches the duration in the CSS
+        }
+
+        // Create leaves at intervals
+        setInterval(createLeaf, 1000); // Create a leaf every second
     </script>
 
 </body>
 </html>
+
